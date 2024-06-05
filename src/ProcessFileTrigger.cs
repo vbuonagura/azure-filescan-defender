@@ -24,7 +24,7 @@ namespace Vbu.ProcessFile
             var receivedMessage = JsonSerializer.Deserialize<DocumentProcessingMessage>(msg);
 
             _logger.LogInformation($@"Start processing file 
-                                {receivedMessage.Data} received");
+                                {receivedMessage.Uri} received");
 
             var blobUri = new Uri(receivedMessage.Uri);
             var blobUriBuilder = new BlobUriBuilder(blobUri);
